@@ -11,7 +11,8 @@ export class AuthService {
     get isAuthenticated(){
         return !!localStorage.getItem('token')
     }
-
+	
+	//register func
     register(credentials) {
         this.http.post<any>(`http://localhost:53474/api/account`, credentials).subscribe(res => {
             this.authenticate(res)
